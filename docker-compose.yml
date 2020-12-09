@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  karate-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GIT_BRANCH=${GIT_BRANCH}
+    command: ./run.sh
+    volumes:
+      - ./results:/cucumber-report-demo/results
